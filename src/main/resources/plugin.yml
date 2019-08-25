@@ -1,0 +1,31 @@
+main: net.yama2211.ps.Main
+name: ${project.artifactId}
+version: ${project.version}
+
+commands:
+  pointtp:
+    description: Help Command
+  pointtp.setpoint:
+    description: SetPoint Command
+  pointtp.tp:
+    description: TPCommand
+  pointtp.reload:
+    description: Config Reload Command
+
+permissions:
+  pointtp.setpoint:
+    description: SetPoint Command
+    default: op
+  pointtp.teleport:
+    description: TP Command
+    default: op
+  pointtp.cofreload:
+    description: Config Reload Command
+    default: op
+  pointtp.*:
+    description: 制限系権限のすべて
+    default: op
+    children:
+      pointtp.setpoint: true
+      pointtp.teleport: true
+      pointtp.cofreload: true

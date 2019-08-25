@@ -1,0 +1,9 @@
+point:
+  World: world
+  X: 0
+  Y: 0
+  Z: 0
+  Yaw: -180.0
+  Pitch: 90.0
+
+JoinTP: false
