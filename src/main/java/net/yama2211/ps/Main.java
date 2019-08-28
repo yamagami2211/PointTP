@@ -2,7 +2,8 @@
 
   @author : yamagami2211 < https://yama2211.biz | https://twitter.com/yamagami2211_02 >
 
-  ver: 1.0.0.3 | Configの不具合を修正
+  ver: 1.0.0.5 | Configの不具合を修正(2)
+  ver: 1.0.0.4 | Configの不具合を修正
   ver: 1.0.0.3 | tpmessageを追加、改行とかの崩れ修正
   ver: 1.0.0.2 | jointpコマンドを削除(ビルドなし)
   ver: 1.0.0.1 | checkコマンドとJoinTPをコマンドで変更できるように

@@ -6,10 +6,8 @@ point:
   Yaw: -180.0
   Pitch: 90.0
   
- JoinTP: false
- #カラーコードが使えます。&<カラーコード>
-tpmessage: "ポイントにテレポートしました。"
-  
+JoinTP: false
 
-  
-  
+#カラーコードが使えます。&<カラーコード>
+tpmessage: "ポイントにテレポートしました。"
+ 
