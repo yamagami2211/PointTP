@@ -11,6 +11,8 @@ commands:
     description: TPCommand
   pointtp.reload:
     description: Config Reload Command
+  pointtp.check:
+    description: Config Check Command
 
 permissions:
   pointtp.setpoint:
@@ -22,10 +24,17 @@ permissions:
   pointtp.cofreload:
     description: Config Reload Command
     default: op
+  pointtp.cofcheck:
+    description: Config Reload Command
+    default: op
+  pointtp.setjointp:
+    description: Jointp change Command
+    default: op
   pointtp.*:
-    description: 制限系権限のすべて
+    description: PointTP All Pex
     default: op
     children:
       pointtp.setpoint: true
       pointtp.teleport: true
       pointtp.cofreload: true
+      pointtp.cofcheck: true

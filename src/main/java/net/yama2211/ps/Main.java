@@ -2,7 +2,10 @@
 
   @author : yamagami2211 < https://yama2211.biz | https://twitter.com/yamagami2211_02 >
 
-  ver: 1.0.0.23 | 大体完成してるけどAlpha版だよぉ...
+  ver: 1.0.0.3 | tpmessageを追加、改行とかの崩れ修正
+  ver: 1.0.0.2 | jointpコマンドを削除
+  ver: 1.0.0.1 | checkコマンドとJoinTPをコマンドで変更できるように
+  ver: 1.0.0.0 | バージョンリセット / 一部修正
 
 //*/
 package net.yama2211.ps;
@@ -38,6 +41,7 @@ public class Main extends JavaPlugin implements Listener {
 				sender.sendMessage(ChatColor.GREEN + "PluginVersion : " + ChatColor.DARK_PURPLE + yml.getVersion());
 				sender.sendMessage(ChatColor.AQUA + "/pointtp setpoint" + ChatColor.WHITE + ": ポイントを設定します。");
 				sender.sendMessage(ChatColor.AQUA + "/pointtp tp" + ChatColor.WHITE + ": ポイントにテレポートします。");
+				sender.sendMessage(ChatColor.AQUA + "/pointtp check" + ChatColor.WHITE + ": コンフィグの内容を表示します。");
 			}
 			if (args.length == 1) {
 				if (args[0].equalsIgnoreCase("setpoint")) {
@@ -56,7 +60,8 @@ public class Main extends JavaPlugin implements Listener {
 							sender.sendMessage(ChatColor.AQUA + "[PointTP] " + ChatColor.GREEN + "座標をconfigに記録しました");
 						} else {
 							sender.sendMessage(
-									"このコマンドは" + ChatColor.RED + "コンソール" + ChatColor.RESET + "から実行することはできません。");
+									ChatColor.AQUA + "[PointTP/Error] " + ChatColor.RESET + "このコマンドは" + ChatColor.RED
+											+ "コンソール" + ChatColor.RESET + "から実行することはできません。");
 						}
 
 					}
@@ -81,10 +86,13 @@ public class Main extends JavaPlugin implements Listener {
 							player.getLocation().setPitch(pitch);
 
 							player.teleport(point);
-							sender.sendMessage(ChatColor.AQUA + "[PointTP] " + ChatColor.GREEN + "テレポートしました。");
+							sender.sendMessage(
+									ChatColor.AQUA + "[PointTP] " + ChatColor.translateAlternateColorCodes('&',
+											getConfig().getString("tpmessage")));
 						} else {
 							sender.sendMessage(
-									"このコマンドは" + ChatColor.RED + "コンソール" + ChatColor.RESET + "から実行することはできません。");
+									ChatColor.AQUA + "[PointTP/Error] " + ChatColor.RESET + "このコマンドは" + ChatColor.RED
+											+ "コンソール" + ChatColor.RESET + "から実行することはできません。");
 						}
 					}
 				}
@@ -93,6 +101,27 @@ public class Main extends JavaPlugin implements Listener {
 					if ((sender.hasPermission("pointtp.cofreload")) || (sender.isOp())) {
 						reloadConfig();
 						sender.sendMessage(ChatColor.AQUA + "[PointTP] " + ChatColor.GREEN + "Configをリロードしました。");
+					}
+				}
+
+				if (args[0].equalsIgnoreCase("check")) {
+					if ((sender.hasPermission("pointtp.cofcheck")) || (sender.isOp())) {
+						sender.sendMessage(ChatColor.AQUA + "=== Config check ===");
+						sender.sendMessage(ChatColor.AQUA + "=== コンフィグの内容を確認できます。 ===");
+						sender.sendMessage(
+								ChatColor.GREEN + "World: " + ChatColor.WHITE + getConfig().getString("point.World"));
+						sender.sendMessage(
+								ChatColor.GREEN + "X: " + ChatColor.WHITE + getConfig().getString("point.X"));
+						sender.sendMessage(
+								ChatColor.GREEN + "Y: " + ChatColor.WHITE + getConfig().getString("point.Y"));
+						sender.sendMessage(
+								ChatColor.GREEN + "Z: " + ChatColor.WHITE + getConfig().getString("point.Z"));
+						sender.sendMessage(
+								ChatColor.GREEN + "Yaw: " + ChatColor.WHITE + getConfig().getString("point.Yaw"));
+						sender.sendMessage(
+								ChatColor.GREEN + "Pitch: " + ChatColor.WHITE + getConfig().getString("point.Pitch"));
+						sender.sendMessage(
+								ChatColor.GREEN + "JoinTP: " + ChatColor.WHITE + getConfig().getString("JoinTP"));
 					}
 				}
 
