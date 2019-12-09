@@ -10,7 +10,8 @@
 ダウンロード(配布時期未定)してpluginsにぶち込んで再起動するだけ。  
 
 ## ダウンロード
-[v1.0.0.6](https://go.yama2211.biz/ptv1006)
+[v1.0.0.6](https://f.ym21.ml/nuhry)  
+[昔のバージョン](http://sp.yama2211.net/PointTP/)
 
 ## ライセンス
 二次配布はだめ。  
