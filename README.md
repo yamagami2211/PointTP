@@ -1,23 +1,5 @@
-# PointTP
-なぜこんなプラグインを作ったのか。  
-用途不明のよくわからないプラグインです。
+個人リポジトリから移動しました。  
+https://github.com/plugin-yamagami2211/PointTP
 
-## 説明
-指定したポイントをConfigに記録し、テレポートさせるする事ができます。  
-ポイント複数でテレポート先を指定できるとかであれば実用性あるんでしょうけど、私のゴミみたいな技術では実装できませんでした。  
-
-## 導入方法
-ダウンロード(配布時期未定)してpluginsにぶち込んで再起動するだけ。  
-
-## ダウンロード
-[v1.0.0.6](https://f.ym21.ml/nuhry)  
-[昔のバージョン](http://sp.yama2211.net/PointTP/)
-
-## ライセンス
-二次配布はだめ。  
-改造自由にどうぞ。  
-
-## 作者
-やまがみ
- https://yama2211.biz/
- https://twitter.com/yamagami2211_02
+やまがみ製のSpigotPlugin  
+https://github.com/plugin-yamagami2211
